@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/css/bootstrap.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="body mx-auto mt-5 text-center pt-5">
+        <h1 class="text-center fw-bold">PICK ONE!</h1><br>
+        <button class="btn bg-black text-white fw-bold col-3 " onclick="pick(0)">Rock</button>
+        <button class="btn bg-primary text-white fw-bold col-3"  onclick="pick(1)">paper</button>
+        <button class="btn bg-success text-white fw-bold col-3"  onclick="pick(2)">Scissors</button>
+    </div>
+</body>
+
+<script>
+
+
+            // let randomGame = Math.floor(Math.random() * 3)
+            let pickArray = ["rock" , "paper" , "scissors"]
+            
+            function pick(num){
+                let random = Math.floor(Math.random() * 3)
+                 let userPick = pickArray[num];
+                 let computerPick = pickArray[random];
+
+                 if( num === random){
+                    alert(`
+                    Its a tie!! 
+                    
+                    Your Choice : ${pickArray[num]} 
+                    
+                    Computer's choice : ${pickArray[random]}`)
+                }
+                else if((num === 0 && random === 2) || (num === 1 && random === 0) || (num === 2 && random === 1)){
+                     alert(`
+                     You win!! 
+                     
+                     Your Choice : ${pickArray[num]} 
+                     
+                     Computer's choice : ${pickArray[random]}`)
+                    } else {
+                        alert(`
+                         oops!! Try again 
+
+                         Your Choice : ${pickArray[num]}
+
+                         Computer's choice : ${pickArray[random]}`)                     
+                 }
+            }
+</script>
+</html>
